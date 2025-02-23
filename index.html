@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Analysis & News</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="hero-section">
+    <header class="header">
+        <nav class="nav container">
+            <div class="logo">NEXUS</div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link active">Trang Chủ</a>
+                <a href="views/analysis.html" class="nav-link">Đánh Giá</a>
+                <a href="views/news.html" class="nav-link">Tin Tức</a>
+                <a href="views/about.html" class="nav-link">Giới Thiệu</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">  <!-- Changed from id="hero" to id="home" -->
+            <div class="carousel">
+                <div class="carousel-item active" style="background-image: url('assets/images/banner/banner4.png')">
+                    <div class="carousel-content" data-aos="fade-up">
+                        <h1>Đánh Giá Game Mới Nhất</h1>
+                        <p>Khám phá những phân tích chuyên sâu về các tựa game mới</p>
+                        <button class="carousel-btn">Xem Thêm</button>
+                    </div>
+                </div>
+                <div class="carousel-item" style="background-image: url('assets/images/banner/banner2.jpeg')">
+                    <div class="carousel-content" data-aos="fade-up">
+                        <h1>Gaming News</h1>
+                        <p>Stay updated with the latest gaming industry news</p>
+                        <button class="carousel-btn">Read More</button>
+                    </div>
+                </div>
+                <div class="carousel-item" style="background-image: url('assets/images/banner/banner3.jpg')">
+                    <div class="carousel-content" data-aos="fade-up">
+                        <h1>Game Guides</h1>
+                        <p>Expert tips and detailed game walkthroughs</p>
+                        <button class="carousel-btn">Read More</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="analysis" class="section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Đánh Giá Nổi Bật</h2>
+                <div class="analysis-grid" data-aos="fade-up" data-aos-delay="200">
+                    <div class="analysis-main">
+                        <!-- Analysis cards will be inserted here by JS -->
+                    </div>
+                    <aside class="analysis-sidebar">
+                        <div class="trending-list">
+                            <h3 class="trending-title">Trending Reviews</h3>
+                            <!-- Trending items -->
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <section id="news" class="section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Tin Tức Game</h2>
+                <div class="news-grid">
+                    <div class="news-featured" data-aos="fade-right" data-aos-duration="1000">
+                        <article class="news-card featured">
+                            <div class="news-image">
+                                <img src="assets/images/news/cyberpunk-2077.jpg" alt="Cyberpunk 2077">
+                                <span class="news-category">Hot News</span>
+                            </div>
+                            <div class="news-content">
+                                <h3>Cyberpunk 2077: Phantom Liberty - Bản mở rộng cuối cùng sẽ ra mắt vào tháng 9</h3>
+                                <p>CD Projekt Red xác nhận ngày phát hành DLC Phantom Liberty, hứa hẹn mang đến trải nghiệm hoàn toàn mới với nhiều cải tiến đột phá...</p>
+                                <div class="news-meta">
+                                    <span class="news-date">15/08/2023</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    
+                    <div class="news-sidebar" data-aos="fade-left" data-aos-duration="1000">
+                        <article class="news-card sidebar">
+                            <div class="news-image">
+                                <img src="assets/images/news/starfield.jpg" alt="Starfield">
+                            </div>
+                            <div class="news-content">
+                                <h3>Starfield: Bethesda công bố cấu hình chính thức</h3>
+                                <div class="news-meta">
+                                    <span class="news-date">14/08/2023</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="news-card sidebar">
+                            <div class="news-image">
+                                <img src="assets/images/news/baldurs-gate3.jpg" alt="Baldur's Gate 3">
+                            </div>
+                            <div class="news-content">
+                                <h3>Baldur's Gate 3 phá vỡ kỷ lục người chơi trên Steam</h3>
+                                <div class="news-meta">
+                                    <span class="news-date">13/08/2023</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="news-card sidebar">
+                            <div class="news-image">
+                                <img src="assets/images/news/gta6.jpg" alt="GTA 6">
+                            </div>
+                            <div class="news-content">
+                                <h3>GTA 6: Rockstar Games tiết lộ thông tin mới</h3>
+                                <div class="news-meta">
+                                    <span class="news-date">12/08/2023</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">NEXUS</div>
+                    <div class="footer-social">
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitch"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Liên Kết</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Trang Chủ</a></li>
+                        <li><a href="views/analysis.html">Đánh Giá Game</a></li>
+                        <li><a href="views/news.html">Tin Tức</a></li>
+                        <li><a href="views/about.html">Giới Thiệu</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">RPG Games</a></li>
+                        <li><a href="#">Action Games</a></li>
+                        <li><a href="#">Strategy Games</a></li>
+                        <li><a href="#">Sports Games</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Submit Game</a></li>
+                        <li><a href="#">Advertise</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 NEXUS Gaming. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script type="module" src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Analysis - NEXUS</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="../assets/css/main.css" rel="stylesheet">
+    <link href="../assets/css/analysis.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="hero-section">
+    <div id="loader" class="loader-container">
+        <!-- Same loader as game-detail.html -->
+    </div>
+
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">NEXUS</div>
+            <div class="nav-links">
+                <a href="../index.html" class="nav-link">Trang Chủ</a>
+                <a href="analysis.html" class="nav-link active">Đánh Giá</a>
+                <a href="news.html" class="nav-link">Tin Tức</a>
+                <a href="about.html" class="nav-link">Giới Thiệu</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="carousel">
+                <div class="carousel-item active" style="background-image: url('../assets/images/banner/banner4.png')">
+                    <div class="carousel-content" data-aos="fade-up">
+                        <h1>Discover Your Next Adventure</h1>
+                        <p>The latest reviews and in-depth analysis of today's hottest games</p>
+                        <button class="carousel-btn">Explore Reviews</button>
+                    </div>
+                </div>
+                <div class="carousel-item" style="background-image: url('../assets/images/banner/banner2.jpeg')">
+                    <div class="carousel-content" data-aos="fade-up">
+                        <h1>Expert Analysis</h1>
+                        <p>Detailed breakdowns and professional insights on the gaming world</p>
+                        <button class="carousel-btn">Read Reviews</button>
+                    </div>
+                </div>
+                <div class="carousel-item" style="background-image: url('../assets/images/banner/banner3.jpg')">
+                    <div class="carousel-content" data-aos="fade-up">
+                        <h1>Comprehensive Reviews</h1>
+                        <p>From indie gems to AAA titles, we cover it all</p>
+                        <button class="carousel-btn">View Games</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="main-content">
+            <div class="container">
+                <div class="content-wrapper">
+                    <div class="content-main">
+                        <div class="filters" data-aos="fade-down" data-aos-duration="800">
+                            <div class="filters-row">
+                                <input type="text" id="searchInput" placeholder="Tìm kiếm game...">
+                                <select id="genreFilter">
+                                    <option value="">Thể Loại</option>
+                                    <!-- Genres will be dynamically loaded -->
+                                </select>
+                                <select id="sortFilter">
+                                    <option value="newest">Mới Nhất</option>
+                                    <option value="oldest">Cũ Nhất</option>
+                                    <option value="rating-high">Đánh Giá Cao - Thấp</option>
+                                    <option value="rating-low">Đánh Giá Thấp - Cao</option>
+                                    <option value="name-asc">Tên A-Z</option>
+                                    <option value="name-desc">Tên Z-A</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="section-header" data-aos="fade-up" data-aos-duration="800">
+                            <h2 class="section-title">Tất Cả Bài Đánh Giá</h2>
+                            <div class="view-options">
+                                <button class="view-btn active" data-view="grid">
+                                    <i class="fas fa-th-large"></i>
+                                </button>
+                                <button class="view-btn" data-view="list">
+                                    <i class="fas fa-list"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="analysis-grid" id="analysisGrid">
+                            <!-- Game cards will be updated with new structure -->
+                            <div class="analysis-card" onclick="window.location.href='game-detail.html?id=${gameId}'">
+                                <!-- ... other card content ... -->
+                                <div class="analysis-meta">
+                                    <span class="analysis-date">
+                                        <i class="far fa-calendar-alt"></i> ${date}
+                                    </span>
+                                    <span class="read-analysis">
+                                        <i class="fas fa-arrow-right"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pagination" data-aos="fade-up">
+                            <button class="page-btn" data-page="prev"><i class="fas fa-chevron-left"></i></button>
+                            <div class="page-numbers">
+                                <button class="page-btn active">1</button>
+                                <button class="page-btn">2</button>
+                                <button class="page-btn">3</button>
+                                <span>...</span>
+                            </div>
+                            <button class="page-btn" data-page="next"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+
+                    <aside class="content-sidebar">
+                        <div class="sidebar-section trending-reviews" data-aos="fade-left" data-aos-duration="800">
+                            <h2 class="sidebar-title">Đánh Giá Nổi Bật</h2>
+                            <div class="trending-list" id="trendingList">
+                                <!-- Trending items will be inserted here -->
+                            </div>
+                        </div>
+
+                        <div class="sidebar-section top-publishers" data-aos="fade-left" data-aos-delay="200" data-aos-duration="800">
+                            <h2 class="sidebar-title">Nhà Phát Hành Hàng Đầu</h2>
+                            <div class="publishers-list">
+                                <div class="publisher-item">
+                                    <img src="../assets/images/publishers/ea.png" alt="EA">
+                                    <span>Electronic Arts</span>
+                                </div>
+                                <!-- Add more publishers -->
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </main>    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">NEXUS</div>
+                    <div class="footer-social">
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitch"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Liên Kết</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Trang Chủ</a></li>
+                        <li><a href="views/analysis.html">Đánh Giá Game</a></li>
+                        <li><a href="views/news.html">Tin Tức</a></li>
+                        <li><a href="views/about.html">Giới Thiệu</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">RPG Games</a></li>
+                        <li><a href="#">Action Games</a></li>
+                        <li><a href="#">Strategy Games</a></li>
+                        <li><a href="#">Sports Games</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Submit Game</a></li>
+                        <li><a href="#">Advertise</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 NEXUS Gaming. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script type="module" src="../js/loading.js"></script>
+    <script type="module" src="../js/analysis.js"></script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Analysis - Detail</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="../assets/css/main.css" rel="stylesheet">
+    <link href="../assets/css/game-detail.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="loader" class="loader-container">
+        <div class="flower-spinner">
+            <div class="dots-container">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+    </div>
+
+    <header class="header">
+        <nav class="nav container">
+            <div class="logo">NEXUS</div>
+            <div class="nav-links">
+                <a href="../index.html" class="nav-link">Trang Chủ</a>
+                <a href="analysis.html" class="nav-link">Đánh Giá</a>
+                <a href="news.html" class="nav-link">Tin Tức</a>
+                <a href="about.html" class="nav-link">Giới Thiệu</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="game-detail">
+        <div class="container">
+            <div class="game-content">
+                <div class="game-media" data-aos="fade-right" data-aos-duration="1000">
+                    <img id="gameImage" src="" alt="Game Cover">
+                </div>
+                <div class="game-info" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="game-header">
+                        <h1 id="gameTitle"></h1>
+                        <div class="game-meta">
+                            <span class="release-date"></span>
+                            <span class="genre"></span>
+                            <span class="rating"></span>
+                        </div>
+                    </div>
+                    <div id="gameDescription"></div>
+                    <div class="game-scores">
+                        <div class="score-item">
+                            <h3>Gameplay</h3>
+                            <div class="score" id="gameplayScore"></div>
+                        </div>
+                        <div class="score-item">
+                            <h3>Graphics</h3>
+                            <div class="score" id="graphicsScore"></div>
+                        </div>
+                        <div class="score-item">
+                            <h3>Sound</h3>
+                            <div class="score" id="soundScore"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="game-review" data-aos="fade-up" data-aos-delay="200">
+                <h2>Review Chi Tiết</h2>
+                <div id="fullReview"></div>
+            </div>
+
+            <div class="comments-section" data-aos="fade-up" data-aos-delay="400">
+                <h2>Bình Luận</h2>
+                <div class="comment-form">
+                    <textarea id="commentInput" placeholder="Chia sẻ ý kiến của bạn..."></textarea>
+                    <button id="submitComment" class="comment-btn">Gửi Bình Luận</button>
+                </div>
+                <div class="comments-list" id="commentsList">
+                    <!-- Comments will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">NEXUS</div>
+                    <div class="footer-social">
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitch"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Liên Kết</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Trang Chủ</a></li>
+                        <li><a href="views/analysis.html">Đánh Giá Game</a></li>
+                        <li><a href="views/news.html">Tin Tức</a></li>
+                        <li><a href="views/about.html">Giới Thiệu</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">RPG Games</a></li>
+                        <li><a href="#">Action Games</a></li>
+                        <li><a href="#">Strategy Games</a></li>
+                        <li><a href="#">Sports Games</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Submit Game</a></li>
+                        <li><a href="#">Advertise</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 NEXUS Gaming. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script type="module" src="../js/loading.js"></script>
+    <script type="module" src="../js/game-detail.js"></script>
+</body>
+</html>

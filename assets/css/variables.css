@@ -1,0 +1,14 @@
+:root {
+    --primary-color: #ff6b00;
+    --primary-dark: #e65100;
+    --primary-light: #ff8533;
+    --accent-color: #ff9f43;
+    --accent-dark: #ff7e1a;
+    --primary-bg: #fff5eb;
+    --white: #ffffff;
+    --light-gray: #f5f5f5;
+    --dark: #2d3436;
+    --header-height: 80px;
+    --section-padding: 4rem 0;
+    --overlay-dark: rgba(230, 81, 0, 0.85);
+}

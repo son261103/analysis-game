@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming News - Latest Updates</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="../assets/css/main.css" rel="stylesheet">
+    <link href="../assets/css/sections.css" rel="stylesheet">
+    <link href="../assets/css/news.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <style>
+        .hero-section {
+      background: var(--primary-color);
+            color: white;
+        }
+        main {
+            background: var(--primary-color);
+            min-height: 100vh;
+        }
+        .newsletter-section {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .newsletter-form button {
+            background: #fff;
+            color: var(--primary-color);
+        }
+        
+        .newsletter-form button:hover {
+            background: var(--primary-light);
+            color: #fff;
+        }
+
+        .latest-news-section{
+            background: var(--primary-light);
+        }
+    </style>
+</head>
+<body >
+    <!-- Loader -->
+    <div id="loader" class="loader-container">
+        <div class="flower-spinner">
+            <div class="dots-container">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav ">
+            <div class="logo">NEXUS</div>
+            <div class="nav-links">
+                <a href="../index.html" class="nav-link">Trang Chủ</a>
+                <a href="analysis.html" class="nav-link">Đánh Giá</a>
+                <a href="news.html" class="nav-link active">Tin Tức</a>
+                <a href="about.html" class="nav-link">Giới Thiệu</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <!-- Featured News Section -->
+        <section class="featured-news-section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-down">Tin Tức Nổi Bật</h2>
+                <div class="swiper featured-swiper" data-aos="fade-up">
+                    <div class="swiper-wrapper">
+                        <!-- Slides will be injected by JavaScript -->
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest News Section -->
+        <section class="latest-news-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" data-aos="fade-right">Tin Tức Mới Nhất</h2>
+                    <div class="news-filters" data-aos="fade-left">
+                        <button class="filter-btn active" data-category="all">Tất Cả</button>
+                        <button class="filter-btn" data-category="releases">Ra Mắt</button>
+                        <button class="filter-btn" data-category="updates">Cập Nhật</button>
+                        <button class="filter-btn" data-category="events">Sự Kiện</button>
+                    </div>
+                </div>
+                
+                <div class="news-container" data-aos="fade-up">
+                    <!-- News cards will be injected here by JavaScript -->
+                </div>
+
+                <div class="load-more" data-aos="fade-up">
+                    <button class="load-more-btn">Xem Thêm Tin Tức</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">NEXUS</div>
+                    <div class="footer-social">
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitch"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Liên Kết</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Trang Chủ</a></li>
+                        <li><a href="analysis.html">Đánh Giá Game</a></li>
+                        <li><a href="news.html">Tin Tức</a></li>
+                        <li><a href="about.html">Giới Thiệu</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">RPG Games</a></li>
+                        <li><a href="#">Action Games</a></li>
+                        <li><a href="#">Strategy Games</a></li>
+                        <li><a href="#">Sports Games</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Submit Game</a></li>
+                        <li><a href="#">Advertise</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 NEXUS Gaming. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script type="module" src="../js/loading.js"></script>
+    <script type="module" src="../js/news.js"></script>
+</body>
+</html>

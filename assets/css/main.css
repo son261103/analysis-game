@@ -1,0 +1,574 @@
+@import 'variables.css';
+@import 'header.css';
+@import 'carousel.css';
+@import 'footer.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.section {
+  padding: 1.5rem 0;
+  margin-bottom: 0;
+  background: var(--primary-color);
+}
+
+#news.section {
+  padding-top: 0.5rem; /* Reduce top spacing */
+}
+
+.section-title {
+  color: var(--white);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+  border-left: 4px solid var(--white);
+}
+
+.section-title::after {
+  display: none;
+}
+
+.game-card {
+  background: var(--white);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  position: relative;
+  border: 1px solid rgba(52, 152, 219, 0.1);
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(52, 152, 219, 0.2);
+}
+
+.game-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.game-content {
+  padding: 1.5rem;
+}
+
+.game-content h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.game-content p {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.game-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 2px solid var(--accent-color);
+}
+
+.game-rating {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.game-date {
+  color: #888;
+  font-size: 0.8rem;
+}
+
+.read-more {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background: var(--accent-color);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.read-more:hover {
+  background: var(--accent-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(52, 152, 219, 0.2);
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2.5rem;
+  padding: 2rem 0;
+}
+
+.news-card {
+  background: var(--white);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(255, 107, 0, 0.2);
+}
+
+.news-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.news-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.news-card:hover .news-image img {
+  transform: scale(1.1);
+}
+
+.news-category {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: var(--accent-color);
+  color: var(--white);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.news-content {
+  padding: 1.5rem;
+}
+
+.news-content h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--dark);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.news-content p {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.news-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}
+
+.news-date {
+  color: var(--accent-color);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.news-featured {
+  grid-column: span 8;
+  height: 400px; /* Reduced height */
+}
+
+.news-sidebar {
+  grid-column: span 4;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.news-card.featured {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.news-card.featured .news-image {
+  height: 50%;
+}
+
+.news-card.featured .news-content {
+  padding: 1rem;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.news-card.sidebar {
+  display: flex;
+  height: 130px;
+  margin-bottom: 0.5rem;
+}
+
+.news-card.sidebar .news-image {
+  width: 40%;
+  height: 100%;
+}
+
+.news-card.sidebar .news-content {
+  width: 60%;
+  padding: 0.75rem;
+}
+
+.news-card.sidebar h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.analysis-card {
+  background: var(--white);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  position: relative;
+  border: 1px solid rgba(255, 107, 0, 0.1);
+  height: 140px; /* Increased height */
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 0.4rem;
+}
+
+.analysis-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(255, 107, 0, 0.15);
+}
+
+.analysis-image {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  width: 30%;
+  min-width: 180px;
+  max-width: 180px;
+}
+
+.analysis-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.analysis-card:hover .analysis-image img {
+  transform: scale(1.05);
+}
+
+.analysis-category {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: var(--accent-color);
+  color: var(--white);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.analysis-rating {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.7);
+  color: var(--accent-color);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.analysis-content {
+  padding: 0.75rem;
+  width: 72%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.3rem;
+}
+
+.analysis-header {
+  margin-bottom: 0.2rem;
+}
+
+.analysis-header h3 {
+  font-size: 1rem;
+  color: var(--dark);
+  margin-bottom: 0.2rem;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.developer {
+  color: var(--accent-color);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.analysis-desc {
+  color: #666;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  margin-bottom: 0.3rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: 2.6em; /* Increased height for description */
+}
+
+.analysis-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.2rem;
+}
+
+.pros {
+  display: flex;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.3rem;
+}
+
+.pro-tag {
+  background: var(--primary-bg);
+  color: var(--primary-color);
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.playtime {
+  color: var(--dark);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.analysis-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.3rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  margin-top: auto;
+}
+
+.analysis-date {
+  color: #888;
+  font-size: 0.8rem;
+}
+
+.read-analysis {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.read-analysis:hover {
+  color: var(--primary-color);
+}
+
+.analysis-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 0.3rem;
+  background: var(--primary-color);
+  padding: 0.3rem 0.5rem;
+  align-items: start; /* Keep sidebar at top */
+}
+
+.analysis-main {
+  grid-column: span 9;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.4rem;
+  padding-right: 0.3rem;
+  max-height: none; /* Remove max height */
+  overflow-y: visible; /* Remove scroll */
+}
+
+/* Add custom scrollbar */
+.analysis-main::-webkit-scrollbar {
+  width: 6px;
+}
+
+.analysis-main::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.analysis-main::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+  border-radius: 3px;
+}
+
+.analysis-sidebar {
+  grid-column: span 3;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 0.4rem;
+  height: fit-content;
+  position: sticky;
+  top: calc(var(--header-height) + 1rem);
+  align-self: start;
+}
+
+.trending-list {
+  background: var(--white);
+  padding: 0.6rem;
+  border-radius: 8px;
+  margin-bottom: 0;
+}
+
+.trending-title {
+  font-size: 1rem;
+  color: var (--primary-color);
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 2px solid var(--accent-color);
+}
+
+.trending-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.trending-item:hover {
+  transform: translateX(5px);
+}
+
+.trending-item:last-child {
+  border-bottom: none;
+}
+
+.trending-number {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  min-width: 25px;
+}
+
+.trending-meta {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.75rem;
+  color: #666;
+  margin-top: 0.25rem;
+}
+
+.trending-category {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.trending-views {
+  color: #888;
+}
+
+.trending-rating {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.trending-info h4 {
+  font-size: 0.75rem;
+  margin-bottom: 0.15rem;
+}
+
+.trending-info span {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .analysis-main {
+    grid-template-columns: 1fr;
+  }
+
+  .analysis-card {
+    height: 160px;
+  }
+}
+
+@media (max-width: 768px) {
+  .analysis-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .analysis-main,
+  .analysis-sidebar {
+    grid-column: span 12;
+  }
+}
+
+@media (max-width: 576px) {
+  .analysis-card {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .analysis-image {
+    width: 100%;
+    height: 180px;
+  }
+
+  .analysis-content {
+    width: 100%;
+  }
+}
