@@ -1,13 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Analysis & News</title>
+    <meta name="description" content="Trang web đánh giá và tin tức game hàng đầu Việt Nam">
+    <title>NEXUS Gaming - Đánh giá & Tin tức Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="assets/css/main.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+
 <body class="hero-section">
     <header class="header">
         <nav class="nav container">
@@ -22,7 +29,7 @@
     </header>
 
     <main>
-        <section id="home" class="hero">  <!-- Changed from id="hero" to id="home" -->
+        <section id="home" class="hero"> <!-- Changed from id="hero" to id="home" -->
             <div class="carousel">
                 <div class="carousel-item active" style="background-image: url('assets/images/banner/banner4.png')">
                     <div class="carousel-content" data-aos="fade-up">
@@ -70,25 +77,26 @@
                 <h2 class="section-title" data-aos="fade-up">Tin Tức Game</h2>
                 <div class="news-grid">
                     <div class="news-featured" data-aos="fade-right" data-aos-duration="1000">
-                        <article class="news-card featured">
+                        <article class="news-card featured" data-game-id="cyberpunk-2077">
                             <div class="news-image">
-                                <img src="assets/images/news/cyberpunk-2077.jpg" alt="Cyberpunk 2077">
+                                <img src="https://picsum.photos/seed/picsum/200/300" alt="Cyberpunk 2077">
                                 <span class="news-category">Hot News</span>
                             </div>
                             <div class="news-content">
                                 <h3>Cyberpunk 2077: Phantom Liberty - Bản mở rộng cuối cùng sẽ ra mắt vào tháng 9</h3>
-                                <p>CD Projekt Red xác nhận ngày phát hành DLC Phantom Liberty, hứa hẹn mang đến trải nghiệm hoàn toàn mới với nhiều cải tiến đột phá...</p>
+                                <p>CD Projekt Red xác nhận ngày phát hành DLC Phantom Liberty, hứa hẹn mang đến trải
+                                    nghiệm hoàn toàn mới với nhiều cải tiến đột phá...</p>
                                 <div class="news-meta">
                                     <span class="news-date">15/08/2023</span>
                                 </div>
                             </div>
                         </article>
                     </div>
-                    
+
                     <div class="news-sidebar" data-aos="fade-left" data-aos-duration="1000">
-                        <article class="news-card sidebar">
+                        <article class="news-card sidebar" data-game-id="starfield">
                             <div class="news-image">
-                                <img src="assets/images/news/starfield.jpg" alt="Starfield">
+                                <img src="https://picsum.photos/seed/picsum/200/300" alt="Starfield">
                             </div>
                             <div class="news-content">
                                 <h3>Starfield: Bethesda công bố cấu hình chính thức</h3>
@@ -98,9 +106,10 @@
                             </div>
                         </article>
 
-                        <article class="news-card sidebar">
+                        <article class="news-card sidebar" data-game-id="baldurs-gate-3" style="cursor: pointer;"
+                            onclick="window.location.href='/views/game-detail.html?id=Baldurs%20Gate%203'">
                             <div class="news-image">
-                                <img src="assets/images/news/baldurs-gate3.jpg" alt="Baldur's Gate 3">
+                                <img src="https://picsum.photos/seed/picsum/200/300" alt="Baldur's Gate 3">
                             </div>
                             <div class="news-content">
                                 <h3>Baldur's Gate 3 phá vỡ kỷ lục người chơi trên Steam</h3>
@@ -110,9 +119,9 @@
                             </div>
                         </article>
 
-                        <article class="news-card sidebar">
+                        <article class="news-card sidebar" data-game-id="gta6">
                             <div class="news-image">
-                                <img src="assets/images/news/gta6.jpg" alt="GTA 6">
+                                <img src="https://picsum.photos/seed/picsum/200/300" alt="GTA 6">
                             </div>
                             <div class="news-content">
                                 <h3>GTA 6: Rockstar Games tiết lộ thông tin mới</h3>
@@ -176,4 +185,5 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script type="module" src="js/script.js"></script>
 </body>
+
 </html>

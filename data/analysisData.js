@@ -2,7 +2,7 @@ import { placeholderImages } from './imageUrls.js';
 
 export const analysisData = [
     {
-        title: 'Baldur\'s Gate 3',
+        title: 'Baldurs Gate 3',
         image: placeholderImages.games.bg3,
         description: 'A masterpiece of RPG design that sets new standards for the genre with unprecedented player freedom, stunning visuals, and deep tactical combat...',
         rating: '9.8/10',

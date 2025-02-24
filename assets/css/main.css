@@ -3,6 +3,10 @@
 @import 'carousel.css';
 @import 'footer.css';
 
+:root {
+  --font-primary: 'Be Vietnam Pro', sans-serif;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -10,8 +14,10 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-primary);
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
@@ -30,12 +36,19 @@ body {
   padding-top: 0.5rem; /* Reduce top spacing */
 }
 
+#analysis.section {
+  padding-top: 150px; /* Tăng thêm padding-top */
+  margin-top: -80px; /* Điều chỉnh margin âm */
+}
+
 .section-title {
   color: var(--white);
   font-size: 1.5rem;
   margin-bottom: 1rem;
   padding-left: 1rem;
   border-left: 4px solid var(--white);
+  font-family: var(--font-primary);
+  font-weight: 700;
 }
 
 .section-title::after {
@@ -128,13 +141,18 @@ body {
   border-radius: 6px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
+  cursor: pointer;
 }
 
 .news-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(255, 107, 0, 0.2);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.news-card.sidebar:hover {
+  transform: translateY(-3px);
 }
 
 .news-image {
@@ -259,22 +277,28 @@ body {
 }
 
 .analysis-card {
-  background: var(--white);
-  border-radius: 6px;
+  background: rgba(27, 31, 59, 0.95);
+  border: 1px solid var(--accent-color);
+  height: 180px; /* Tăng chiều cao thẻ */
   overflow: hidden;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   border: 1px solid rgba(255, 107, 0, 0.1);
-  height: 140px; /* Increased height */
   display: flex;
   flex-direction: row;
   margin-bottom: 0.4rem;
+  cursor: pointer;
 }
 
 .analysis-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 30px rgba(255, 107, 0, 0.15);
+}
+
+.analysis-card:active {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 107, 0, 0.1);
 }
 
 .analysis-image {
@@ -323,7 +347,7 @@ body {
 }
 
 .analysis-content {
-  padding: 0.75rem;
+  padding: 1rem;
   width: 72%;
   display: flex;
   flex-direction: column;
@@ -337,7 +361,7 @@ body {
 
 .analysis-header h3 {
   font-size: 1rem;
-  color: var(--dark);
+  color: var(--white);
   margin-bottom: 0.2rem;
   line-height: 1.4;
   display: -webkit-box;
@@ -353,7 +377,7 @@ body {
 }
 
 .analysis-desc {
-  color: #666;
+  color: var(--text-light);
   font-size: 0.8rem;
   line-height: 1.4;
   margin-bottom: 0.3rem;
@@ -361,7 +385,7 @@ body {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  height: 2.6em; /* Increased height for description */
+  height: 3.6em; /* Tăng chiều cao phần mô tả */
 }
 
 .analysis-details {
@@ -379,8 +403,8 @@ body {
 }
 
 .pro-tag {
-  background: var(--primary-bg);
-  color: var(--primary-color);
+  background: var(--accent-color);
+  color: var(--white);
   padding: 0.15rem 0.5rem;
   border-radius: 3px;
   font-size: 0.7rem;
@@ -454,17 +478,19 @@ body {
 
 .analysis-sidebar {
   grid-column: span 3;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(27, 31, 59, 0.95);
+  border: 1px solid var(--accent-color);
   border-radius: 10px;
   padding: 0.4rem;
   height: fit-content;
   position: sticky;
-  top: calc(var(--header-height) + 1rem);
+  top: calc(var(--header-height) + 2rem);
   align-self: start;
 }
 
 .trending-list {
-  background: var(--white);
+  background: var(--primary-dark);
+  color: var(--white);
   padding: 0.6rem;
   border-radius: 8px;
   margin-bottom: 0;
@@ -472,7 +498,7 @@ body {
 
 .trending-title {
   font-size: 1rem;
-  color: var (--primary-color);
+  color: var (--white);
   margin-bottom: 0.75rem;
   padding-bottom: 0.25rem;
   border-bottom: 2px solid var(--accent-color);
@@ -483,7 +509,7 @@ body {
   align-items: center;
   gap: 0.5rem;
   padding: 0.4rem 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid var(--border-color);
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -499,7 +525,7 @@ body {
 .trending-number {
   font-size: 1rem;
   font-weight: 700;
-  color: var(--primary-color);
+  color: var(--accent-color);
   min-width: 25px;
 }
 
@@ -528,6 +554,7 @@ body {
 .trending-info h4 {
   font-size: 0.75rem;
   margin-bottom: 0.15rem;
+  color: var(--white);
 }
 
 .trending-info span {

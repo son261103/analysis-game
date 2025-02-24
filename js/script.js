@@ -14,7 +14,7 @@ AOS.init({
 // Sample data for games
 const games = [
     {
-        title: 'Baldur\'s Gate 3',
+        title: 'Baldurs Gate 3',
         image: 'assets/images/games/bg3.jpg',
         description: 'A masterpiece of RPG design with unprecedented player freedom and stunning visuals...',
         rating: '9.8/10',
@@ -133,8 +133,12 @@ function handleImageError(img) {
 }
 
 function createAnalysisCard(game) {
+    const gameUrlId = encodeURIComponent(game.title.trim());
     return `
-        <div class="analysis-card" data-aos="fade-up">
+        <div class="analysis-card" data-game-id="${game.title.toLowerCase().replace(/\s+/g, '-')}" 
+             data-aos="fade-up" 
+             style="cursor: pointer"
+             onclick="window.location.href='views/game-detail.html?id=${gameUrlId}'">
             <div class="analysis-image">
                 <img src="${game.image}" 
                      alt="${game.title}"
@@ -163,7 +167,10 @@ function createAnalysisCard(game) {
 
 function createTrendingItem(item) {
     return `
-        <div class="trending-item">
+        <div class="trending-item" 
+             data-game-id="${item.title.toLowerCase().replace(/\s+/g, '-')}" 
+             style="cursor: pointer"
+             onclick="window.location.href='/views/game-detail.html?id=${encodeURIComponent(item.title)}'">
             <span class="trending-number">${item.number}</span>
             <div class="trending-info">
                 <h4>${item.title}</h4>
@@ -508,12 +515,47 @@ function initializeSections() {
     }
 }
 
+function initializeNewsCards() {
+    const newsCards = document.querySelectorAll('.news-card');
+    newsCards.forEach(card => {
+        card.addEventListener('click', (e) => {
+            e.preventDefault();
+            const gameId = card.dataset.gameId;
+            if (gameId) {
+                navigateToGameDetail(gameId);
+            }
+        });
+        
+        // Thêm style cursor pointer
+        card.style.cursor = 'pointer';
+    });
+}
+
 function initializePage() {
     createGameCards();
     createNewsCards();
     createUpcomingSection();
     createCategoriesSection();
     handleCardClick();
+    initializeNewsCards();
+    
+    // Add click handlers for all game cards
+    document.querySelectorAll('.analysis-card, .trending-item').forEach(card => {
+        if (!card.hasAttribute('onclick')) {
+            card.addEventListener('click', (e) => {
+                e.preventDefault();
+                const gameId = encodeURIComponent(card.querySelector('h3').textContent.trim());
+                if (gameId) {
+                    window.location.href = `views/game-detail.html?id=${gameId}`;
+                }
+            });
+            
+            // Add pointer cursor if not already set
+            if (card.style.cursor !== 'pointer') {
+                card.style.cursor = 'pointer';
+            }
+        }
+    });
 }
 
 // Initialize based on current page
