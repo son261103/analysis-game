@@ -152,7 +152,7 @@ function renderTrendingGames() {
     const trendingGames = games.slice(0, 10); // Get top 10 games
 
     trendingList.innerHTML = trendingGames.map((game, index) => `
-        <div class="trending-item">
+        <div class="trending-item" data-game-id="${game.title}" onclick="window.location.href='game-detail.html?id=${encodeURIComponent(game.title)}'">
             <span class="trending-number">${index + 1}</span>
             <div class="trending-info">
                 <div class="trending-title">${game.title}</div>
@@ -164,7 +164,14 @@ function renderTrendingGames() {
         </div>
     `).join('');
 
-    // Xóa phần populate popular categories
+    // Add click handlers
+    document.querySelectorAll('.trending-item').forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            const gameId = item.dataset.gameId;
+            navigateToGameDetail(gameId);
+        });
+    });
 }
 
 // Update pagination

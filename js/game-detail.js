@@ -21,9 +21,13 @@ document.addEventListener('DOMContentLoaded', () => {
 async function loadGameDetails(gameId) {
     showLoader();
     try {
-        // Tìm game trong analysisData
+        // Clean up the game ID and search more flexibly
+        const searchTitle = gameId.toLowerCase().replace(' review', '').trim();
+        
+        // Find game in analysisData
         const gameData = analysisData.find(game => 
-            game.title.toLowerCase() === gameId.toLowerCase()
+            game.title.toLowerCase().includes(searchTitle) || 
+            searchTitle.includes(game.title.toLowerCase())
         );
 
         if (!gameData) {
@@ -36,17 +40,16 @@ async function loadGameDetails(gameId) {
         document.getElementById('gameImage').src = gameData.image;
         document.getElementById('gameDescription').innerHTML = gameData.description;
         
-        // Update scores
+        // Update scores and meta information
+        document.querySelector('.release-date').textContent = gameData.date;
+        document.querySelector('.genre').textContent = gameData.category;
+        document.querySelector('.rating').textContent = gameData.rating;
+        
+        // Update other game details as needed
         document.getElementById('gameplayScore').textContent = calculateScore(gameData, 'gameplay');
         document.getElementById('graphicsScore').textContent = calculateScore(gameData, 'graphics');
         document.getElementById('soundScore').textContent = calculateScore(gameData, 'sound');
 
-        // Update meta information
-        document.querySelector('.release-date').textContent = gameData.date;
-        document.querySelector('.genre').textContent = gameData.category;
-        document.querySelector('.rating').textContent = gameData.rating;
-
-        // Generate full review content
         const fullReview = generateFullReview(gameData);
         document.getElementById('fullReview').innerHTML = fullReview;
 

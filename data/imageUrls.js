@@ -14,7 +14,8 @@ export const placeholderImages = {
         cities2: '../assets/images/games/cities2.jpg',
         forza: '../assets/images/games/forza.jpg',
         mgs: '../assets/images/games/mgs.webp',
-        ghostrunner2: '../assets/images/games/ghostrunner2.jpg'
+        ghostrunner2: '../assets/images/games/ghostrunner2.jpg',
+        mw3: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHTz65TwErdOMX_mMCQaqpIDnyiDG0jXX-Ow&s'
     },
     categories: {
         action: '../assets/images/categories/action.jpg',

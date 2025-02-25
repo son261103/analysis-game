@@ -192,6 +192,35 @@ export const analysisData = [
         pros: ['Modern gameplay', 'Enhanced graphics', 'Atmosphere'],
         developer: 'Capcom',
         platform: 'PC, PS5, XSX'
+    },
+    {
+        title: 'Modern Warfare III',
+        image: placeholderImages.games.mw3,
+        description: 'Call of Duty: Modern Warfare III tiếp tục câu chuyện của Task Force 141 với chiến dịch mới, chế độ Zombies và trải nghiệm multiplayer được cải tiến...',
+        rating: '8.5/10',
+        date: 'Nov 30, 2023',
+        category: 'FPS',
+        playtime: '30+ hours',
+        pros: [
+            'Multiplayer gameplay cải tiến', 
+            'Chế độ Zombies mới',
+            'Đồ họa và âm thanh ấn tượng',
+            'Cross-platform play'
+        ],
+        developer: 'Sledgehammer Games',
+        platform: 'PC, PS5, XSX, PS4, Xbox One'
+    },
+    {
+        title: 'Starfield Review',
+        image: placeholderImages.games.starfield,
+        description: 'Bethesda\'s epic space RPG takes players on an unprecedented journey across the stars with amazing customization and exploration...',
+        rating: '9.2/10',
+        date: 'Sep 15, 2023',
+        category: 'RPG',
+        playtime: '150+ hours',
+        pros: ['Space exploration', 'Character building', 'Freedom of choice', 'Vast universe'],
+        developer: 'Bethesda Game Studios',
+        platform: 'PC, Xbox Series X|S'
     }
 ];
 
@@ -200,7 +229,7 @@ export const trendingAnalysis = [
         number: 1,
         title: 'Starfield Review',
         views: '250K',
-        rating: '9.0/10',
+        rating: '9.2/10',
         category: 'RPG'
     },
     {
